@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="" id="hakkimizda">
+    <p id="vizyon">Vizyonumuz</p>
+    <p id="misyon">Misyonumuz</p>
+</div>
+
+<button onclick="paragrafDegistir()">DEĞİŞTİR</button>
+
+<script>
+    function paragrafDegistir(){
+        var yeniParagraf = document.createElement("p");
+        var yeniParagrafMetni = document.createTextNode("Hedeflerimiz");
+
+        yeniParagraf.appendChild(yeniParagrafMetni);
+
+        var hakkimizda = document.getElementById("hakkimizda");
+        var vizyon = document.getElementById("vizyon");
+
+        //hakkimizda.replaceChild(yeniParagraf, vizyon);
+
+        vizyon.parentElement.replaceChild(yeniParagraf,vizyon);
+    }
+
+</script>
+</body>
+</html>

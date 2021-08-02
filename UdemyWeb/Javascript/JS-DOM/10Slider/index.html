@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button onclick="oncekiFotoyuGetir()">Önceki</button>
+    <img id="slider" src="images/Archer.jpg" alt="">
+    <button onclick="sonrakiFotoyuGetir()">Sonraki</button>
+</div>
+
+<script>
+    var resimler=[
+        "images/Archer.jpg",
+        "images/Atakale.jpg",
+        "images/films.jpg"
+    ];
+
+    var mevcutResimIndex=0;
+
+    function oncekiFotoyuGetir(){
+        var slider=document.getElementById("slider");
+        mevcutResimIndex--;
+        if(mevcutResimIndex<0){
+            mevcutResimIndex=resimler.length-1;
+        }
+        slider.src=resimler[mevcutResimIndex];
+
+    }
+    function sonrakiFotoyuGetir(){
+var slider=document.getElementById("slider");
+mevcutResimIndex++;
+if (mevcutResimIndex>=resimler.length){
+    mevcutResimIndex=0;
+}
+slider.src=resimler[mevcutResimIndex];
+    }
+</script>
+</body>
+</html>

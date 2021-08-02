@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><!--<div class="baslik">
+
+</div>
+<div class="baslik">
+
+</div>--><script>
+    /*
+    document.getElementById("baslik").innerHTML = "<p>Kaan Academy</p>";
+    document.getElementsByClassName("baslik")[0].innerHTML="<h1>Kaan Academy</h1>"
+    document.getElementsByClassName("baslik")[1].innerHTML="<p>Kaan Academy</p>"
+    document.getElementsByTagName("div")[0].innerHTML="div1"
+    document.getElementsByTagName("div")[1].innerHTML="div2"
+     */
+
+    var bodimiz = document.body;
+    for (var i = 0; i < 4; i++) {
+        bodimiz.innerHTML += "<p></p>";
+    }
+    /*
+    var paragraflar=document.getElementsByTagName("p");
+    for (var i=0;i<paragraflar.length;i++){
+        paragraflar[i].innerHTML= "Paragraf sırası: "+(i+1);
+        }
+     */
+    var bodininCocuklari=bodimiz.childNodes;
+
+    for (var i=1;i<bodininCocuklari.length;i++){
+        bodininCocuklari[i].innerHTML = "p"+i;
+        //document.body.innerHTML+=bodininCocuklari[i].nodeName+" ";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

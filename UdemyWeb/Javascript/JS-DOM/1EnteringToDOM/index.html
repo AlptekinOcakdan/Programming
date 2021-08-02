@@ -6,5 +6,20 @@
 </head>
 <body>
 
+<h1>Günün Menüsü</h1>
+<p>Bugün güzel yemeklerden bir menü hazırladık.</p>
+<script>
+    //document.body.innerHTML="Naber";
+    //document.title="Menü Sayfası"
+    function saatiGoster(){
+        var tarih = new Date();
+        var saat= tarih.getHours();
+        var dakika=tarih.getMinutes();
+        var saniye= tarih.getSeconds();
+        document.body.innerHTML="<h1>"+saat+":"+dakika+":"+saniye+"<br>"+"</h1>";
+        document.title=saat+":"+dakika+":"+saniye;
+    }
+    setInterval(saatiGoster,1000);
+</script>
 </body>
 </html>

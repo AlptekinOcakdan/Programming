@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #buyukkutu {
+            width: 200px;
+            height: 200px;
+            background: black;
+            position: relative;
+        }
+
+        #kucukkutu {
+            width: 50px;
+            height: 50px;
+            background: darkred;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="buyukkutu">
+    <div id="kucukkutu">
+
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var pozX= 0,pozY=0;
+        var kucukkutu = document.getElementById("kucukkutu");
+        var zaman = setInterval(hareketEt, 1)
+
+        function hareketEt() {
+            if (pozX >= 150) {
+                pozY++;
+                kucukkutu.style.top = pozY + "px";
+                if (pozY>=150){
+                    clearInterval(zaman)
+                }
+            } else{
+                pozX++;
+                kucukkutu.style.left=pozX+"px";
+            }
+            console.log(pozX)
+        }
+    }
+</script>
+</body>
+</html>
