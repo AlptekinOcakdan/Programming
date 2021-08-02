@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*
+        //var tarih=new Date("March 5,2014 15:45:14")
+        //var tarih=new Date(94,0,15,23,48,14,00)
+       // var tarih=new Date(94,0,15,23,108,14,00)
+        var tarih=new Date();
+        //ayın kaçıncı günü
+        document.write(tarih.getDate());
+        //haftanın kaçıncı günü
+        document.write(tarih.getDay());
+
+    */
+    function saatiGoster(){
+        var tarih = new Date();
+        var saat= tarih.getHours();
+        var dakika=tarih.getMinutes();
+        var saniye= tarih.getSeconds();
+        document.body.innerHTML="<h1>"+saat+":"+dakika+":"+saniye+"<br>"+"</h1>";
+    }
+  setInterval(saatiGoster,1000)
+
+
+
+
+</script>
+</body>
+</html>

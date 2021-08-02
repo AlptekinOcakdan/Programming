@@ -75,7 +75,7 @@ print_r($dizi);
 echo "</pre>";
 
 echo "<hr>";
-//in_array => dizi içerisinde aradığımız değerin olup olmadığını denetler. Varsa 1 değerini döndürür.
+//in_array => dizi içerisinde aradığımız değerin olup olmadığını denetler. Varsa 1Basics değerini döndürür.
 
 
 $dizi=array("a","b","c","d");

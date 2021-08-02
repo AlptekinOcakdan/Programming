@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function selamVer() {
+        document.write("Selam, Naber? <br>");
+    }
+
+    function selamVer(isim) {
+        document.write(isim + " Selam <br>")
+    }
+
+    function selamVer(isim1, isim2 = "İSİM GİRİLMEDİ") {
+        document.write(isim1 + " ve " + isim2 + " , nasılsınız?");
+    }
+
+    function yasiHesapla(isim, dogumTarihi) {
+        document.write(isim + " " + (2021 - dogumTarihi) + " yaşında.");
+    }
+
+    function carp(sayi1, sayi2) {
+        return sayi1 * sayi2;
+    }
+
+    yasiHesapla("Ahmet", 2000)
+    document.write("<br>")
+    document.write(carp(5, 6));
+
+</script>
+</body>
+</html>

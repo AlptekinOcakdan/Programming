@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+ /*   //5 hariç diğer sayıları yazdırır
+    for (var i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        document.write(i + "<br>")
+    }
+    document.write("<br><br>")
+    //5'e gelince durur
+    for (var i = 0; i < 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        document.write(i + "<br>")
+    }
+    document.write("<br><br>")
+    //5'e bölündüğünde kalan sıfır olan sayılar yazdırılmadı. 5'in katları
+    for (var i = 0; i < 30; i++) {
+        if (i % 5 == 0) {
+            continue;
+        }
+        document.write(i + "<br>")
+    }*/
+ var sayi=30;
+ while (sayi>=0){
+     if (sayi%5==0){
+         sayi--;
+         continue;
+     }
+     document.write(sayi+"<br>")
+     sayi--;
+ }
+</script>
+</body>
+</html>

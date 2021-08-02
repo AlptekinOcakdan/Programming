@@ -9,12 +9,12 @@
 <?php
 //Switch Case
 
-/* $sayi=1;
+/* $sayi=1Basics;
 
 switch ($sayi) {
 
-    case '1':
-        echo "1";
+    case '1Basics':
+        echo "1Basics";
         break;
 
         case '2':
@@ -47,7 +47,7 @@ if (isset($_POST['notislemi'])) {
 
     switch ($sayi) {
 
-        case '1':
+        case '1Basics':
             echo "KALDINIZ"; // KALDI
             break;
 

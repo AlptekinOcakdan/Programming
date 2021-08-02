@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /* var isim = "Kaan";
+     var yas = 25;
+     var gozRengi = "Mavi";
+
+     var insan1 = {
+         isim: "Alp",
+         yas: 21,
+         gozRengi: "Black"
+     };
+
+     document.write(insan1.isim + " " + insan1.yas + " " + insan1.gozRengi);
+     document.write("<br>");
+     document.write(insan1["isim"].length);*/
+    function insan(isim, yas, gozRengi) {
+        this.isim = isim;
+        this.yas = yas;
+        this.gozRengi = gozRengi;
+        this.isimDegistir = isimDegistir;
+        this.dogumYili = dogumYiliHesapla;
+    }
+
+    function isimDegistir(yeniIsim) {
+        this.isim = yeniIsim;
+    }
+    function dogumYiliHesapla(){
+        return 2021 - this.yas;
+    }
+
+    var i1 = new insan("Ahmet", 29, "Kahverengi");
+    document.write(i1.isim + " " + i1.yas + " " + i1.gozRengi + "<br>");
+    i1.isimDegistir("Kaan")
+    //fonksiyonu çağırırken parantez koymayı unutma
+    document.write(i1.isim + " " + i1.yas + " " + i1.gozRengi+ " "+i1.dogumYili());
+
+
+</script>
+</body>
+</html>
