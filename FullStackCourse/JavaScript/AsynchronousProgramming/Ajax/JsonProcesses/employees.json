@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alptekin Ocakdan",
+    "department": "Bilişim",
+    "salary": 3500
+  },
+  {
+    "name": "Ömer Yavuz Garip",
+    "department": "Bilişim",
+    "salary": 4000
+  },
+  {
+    "name": "Ahmet Mahmut Alperen",
+    "department": "Pazarlama",
+    "salary": 5000
+  }
+]
