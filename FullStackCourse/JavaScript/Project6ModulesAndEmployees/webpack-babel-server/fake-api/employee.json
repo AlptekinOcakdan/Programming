@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "name": "Fırat Ocakdan",
+      "department": "Maliye",
+      "salary": "6000",
+      "id": 1
+    },
+    {
+      "name": "Ömer Yavuz Garip",
+      "department": "Bilişim",
+      "salary": "3000",
+      "id": 2
+    }
+  ]
+}
