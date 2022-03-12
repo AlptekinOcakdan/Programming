@@ -1,16 +1,22 @@
 {
   "employees": [
     {
-      "name": "Fırat Ocakdan",
-      "department": "Maliye",
-      "salary": "6000",
+      "name": "Alptekin OCAKDAN",
+      "department": "CEO",
+      "salary": 10000,
       "id": 1
     },
     {
       "name": "Ömer Yavuz Garip",
-      "department": "Bilişim",
-      "salary": "3000",
+      "department": "IT Director",
+      "salary": 7000,
       "id": 2
+    },
+    {
+      "name": "Fırat Ocakdan",
+      "department": "Maliye Koordinatörü",
+      "salary": 8000,
+      "id": 3
     }
   ]
 }
