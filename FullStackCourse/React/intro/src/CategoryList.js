@@ -21,7 +21,8 @@ class CategoryList extends Component {
                 <h3>{this.props.info.title}</h3>
                 <ListGroup>
                     {this.state.categories.map(category => (
-                        <ListGroupItem onClick={() => this.props.changeCategory(category)} key={category.id}>
+                        <ListGroupItem  active={category.categoryName === this.props.currentCategory}
+                            onClick={() => this.props.changeCategory(category)} key={category.id}>
                             {category.categoryName}
                         </ListGroupItem>
                     ))}
