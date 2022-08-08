@@ -9,7 +9,7 @@ export function changeCategory(category) {
 
 export function getCategoriesSuccess(categories) {
     return {
-        type: actionTypes.CHANGE_CATEGORY,
+        type: actionTypes.GET_CATEGORIES_SUCCESS,
         payload: categories
     }
 }
