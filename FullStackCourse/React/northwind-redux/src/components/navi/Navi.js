@@ -35,10 +35,7 @@ class Navi extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ms-auto" navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                                <NavLink href="/">Home Page</NavLink>
                             </NavItem>
                             <CartSummary/>
                         </Nav>
