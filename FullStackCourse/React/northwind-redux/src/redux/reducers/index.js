@@ -1,11 +1,13 @@
-import {combineReducers} from "redux";
-import changeCategoryReducer from "./changeCategoryReducer";
+import {combineReducers} from "redux"
+import changeCategoryReducer from "./changeCategoryReducer"
 import categoryListReducer from "./categoryListReducer"
-import productListReducer from "./productListReducer";
-import cartReducer from "./cartReducer";
-import saveProductReducer from "./saveProductReducer";
+import productListReducer from "./productListReducer"
+import cartReducer from "./cartReducer"
+import saveProductReducer from "./saveProductReducer"
 
-const rootReducer= combineReducers({
+
+
+const rootReducer = combineReducers({
     changeCategoryReducer,
     categoryListReducer,
     productListReducer,
