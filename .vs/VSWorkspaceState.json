@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\FullStackCourse",
-    "\\FullStackCourse\\C#",
-    "\\FullStackCourse\\C#\\CSharpCourse"
+    "\\FullStackCourse\\ASP.NET",
+    "\\FullStackCourse\\ASP.NET\\BulkyBook"
   ],
+  "SelectedNode": "\\FullStackCourse\\ASP.NET\\BulkyBook\\BulkyBook.sln",
   "PreviewInSolutionExplorer": false
 }
