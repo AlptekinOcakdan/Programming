@@ -1,0 +1,11 @@
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\bin\Debug\RecapDemo.exe.config
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\bin\Debug\RecapDemo.exe
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\bin\Debug\RecapDemo.pdb
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.csproj.AssemblyReference.cache
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.csproj.SuggestedBindingRedirects.cache
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.Form1.resources
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.Properties.Resources.resources
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.csproj.GenerateResource.cache
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.csproj.CoreCompileInputs.cache
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.exe
+C:\Users\alpte\source\repos\AlptekinOcakdan\Programming\FullStackCourse\C#\CSharpCourse\RecapDemo\obj\Debug\RecapDemo.pdb

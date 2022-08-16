@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
   ],
+=======
+    "",
+    "\\CSharpCourse",
+    "\\CSharpCourse\\Methods"
+  ],
+  "SelectedNode": "\\CSharpCourse\\Methods\\Program.cs",
+>>>>>>> 2c5e2bc5ee1014c5ab9f9b6cc3b6b63ac8c32dab
   "PreviewInSolutionExplorer": false
 }
