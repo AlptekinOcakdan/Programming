@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
-
     static defaultProps = {
         cardTitle: "Default Card Title"
     }
-
     render() {
         return (
             <div className="card w-100">

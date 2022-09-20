@@ -6,17 +6,11 @@ import Collapse from './components/Collapse';
 
 
 const App = () => {
-
-
     return (
         <div className="container">
-
             <div className="row">
-
                 <div className="card-group w-100">
-
                     <div className="col">
-
                         <Collapse href="collapseExample1">
                             <Card
                                 cardText="Lorem Ipsum Text I"
@@ -24,11 +18,8 @@ const App = () => {
                                 image="https://picsum.photos/id/1/200/300"
                             />
                         </Collapse>
-
                     </div>
-
                     <div className="col">
-
                         <Collapse href="collapseExample2">
                             <Card
                                 cardTitle="TEST TITLEX"
@@ -37,20 +28,15 @@ const App = () => {
                                 image="https://picsum.photos/id/2/200/300"
                             />
                         </Collapse>
-
                     </div>
-
                     <div className="col">
-
                         <Collapse href="collapseExample3">
                             <Card
-
                                 cardText="Lorem Ipsum Text III"
                                 updatedTime="Last Updated 3 min ago"
                                 image="https://picsum.photos/id/3/200/300"
                             />
                         </Collapse>
-
                     </div>
                 </div>
             </div>
