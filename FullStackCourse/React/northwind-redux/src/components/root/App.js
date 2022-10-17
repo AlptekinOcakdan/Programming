@@ -3,7 +3,7 @@ import { Container } from "reactstrap";
 import Navi from "../navi/Navi";
 import Dashboard from "./Dashboard";
 import { Route, Switch } from "react-router-dom";
-import CartDetail from "../cart/CartDetail";
+import CartDetail from "../cart/cartDetail";
 import AddOrUpdateProduct from "../products/AddOrUpdateProduct";
 import NotFound from "../common/NotFound";
 
