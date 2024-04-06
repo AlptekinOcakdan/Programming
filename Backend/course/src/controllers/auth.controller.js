@@ -9,6 +9,7 @@ import {
 } from "../utils/auth.utils.js";
 import moment from "moment";
 import {TOKEN_TYPES} from "../constants/types.js";
+import {CustomError} from "../middlewares/errorHandler.middleware.js";
 
 export const register = async (req, res) => {
     const {email, password, confirmPassword, firstName, lastName} = req.body;
@@ -17,22 +18,12 @@ export const register = async (req, res) => {
         const isUserExist = await User.findOne({email});
 
         if (isUserExist) {
-            return res.status(400).json(
-                {
-                    message: "User already exist",
-                    success: false
-                }
-            );
+            throw new CustomError("User already exist", 400);
         }
 
         const passwordMatch = password === confirmPassword;
         if (!passwordMatch) {
-            return res.status(400).json(
-                {
-                    message: "Password does not match",
-                    success: false
-                }
-            );
+            throw new CustomError("Password does not match", 400);
         }
 
         const hashedPassword = await hashPassword(password);
@@ -45,12 +36,7 @@ export const register = async (req, res) => {
         });
 
         if (!newUser) {
-            return res.status(400).json(
-                {
-                    message: "User not created",
-                    success: false
-                }
-            );
+            throw new CustomError("User not created", 400);
         }
 
         const token = generateJWTToken({email: newUser.email, id: newUser._id});
@@ -58,12 +44,7 @@ export const register = async (req, res) => {
         const savedUser = await newUser.save();
 
         if (!savedUser) {
-            return res.status(400).json(
-                {
-                    message: "User not saved",
-                    success: false
-                }
-            );
+            throw new CustomError("User not saved", 400);
         }
 
         return res.status(200).json(
@@ -77,12 +58,7 @@ export const register = async (req, res) => {
             }
         );
     } catch (error) {
-        return res.status(500).json(
-            {
-                message: "Internal server error",
-                success: false
-            }
-        );
+        throw new Error(error.message);
     }
 }
 
@@ -101,22 +77,12 @@ export const login = async (req, res) => {
         }
 
         if (!user) {
-            return res.status(400).json(
-                {
-                    message: "User not found",
-                    success: false
-                }
-            );
+            throw new CustomError("User not found", 400);
         }
 
         const isPasswordMatch = await comparePassword(password);
         if (!isPasswordMatch) {
-            return res.status(400).json(
-                {
-                    message: "Password does not match",
-                    success: false
-                }
-            );
+            throw new CustomError("Invalid credentials", 400)
         }
 
         const token = generateJWTToken({email: user.email, id: user._id});
@@ -132,12 +98,7 @@ export const login = async (req, res) => {
             }
         );
     } catch (error) {
-        return res.status(500).json(
-            {
-                message: "Internal server error",
-                success: false
-            }
-        );
+        throw new Error(error.message);
     }
 }
 
