@@ -32,4 +32,4 @@ openssl rand -hex 64
 - The project will automatically restart if you make any changes
 - You can now start making changes to the project
 
-# Happy coding!
+# Happy coding
