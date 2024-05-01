@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .content {
+            margin: 20px;
+        }
+
+        .order-info, .user-info, .product-list {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .total {
+            text-align: right;
+        }
+
+        .logo {
+            width: 200px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img class="logo" src="https://grandbazaar.no/_next/image?url=%2Fimages%2Fgrand.png&w=256&q=75"
+             alt="Logo">
+    <h1> Order Summary</h1>
+</div>
+
+<div class="content">
+    <div class="user-info">
+        <h2>User Information</h2>
+        <p><strong>Name:</strong> {{user.name}}</p>
+        <p><strong>Surname:</strong> {{user.surname}}</p>
+        <p><strong>Email:</strong> {{user.email}}</p>
+        <p><strong>Contact:</strong> {{user.contact}}</p>
+    </div>
+
+    <div class="order-info">
+        <h2>Order Information</h2>
+        <p><strong>Shipping Address:</strong> {{order.shippingAddress}}</p>
+        <p><strong>Order Bill:</strong> ${{order.bill}}</p>
+        <p><strong>Schedule:</strong> {{order.schedule}}</p>
+        <p><strong>Order Date:</strong> {{order.date}}</p>
+    </div>
+
+    <div class="product-list">
+        <h2>Products</h2>
+        <table>
+            <tr>
+                <th>Quantity</th>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+            {{#each order.products}}
+            <tr>
+                <td>({{this.quantity}})</td>
+                <td>{{this.name}}</td>
+                <td>${{this.price}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    
+</div>
+</body>
+</html>
