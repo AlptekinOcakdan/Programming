@@ -80,7 +80,7 @@ export const login = async (req, res) => {
             throw new CustomError("User not found", 400);
         }
 
-        const isPasswordMatch = await comparePassword(password);
+        const isPasswordMatch = await comparePassword(password, user.password); 
         if (!isPasswordMatch) {
             throw new CustomError("Invalid credentials", 400)
         }
