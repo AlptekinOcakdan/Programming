@@ -8,3 +8,9 @@ export const TOKEN_TYPES={
     PASSWORD_RESET:'passwordReset',
     EMAIL_VERIFICATION:'emailVerification'
 }
+
+export const STATUS = {
+    ACTIVE: 'Active',
+    DRAFT: 'Draft',
+    DEACTIVE: 'Deactive',
+}

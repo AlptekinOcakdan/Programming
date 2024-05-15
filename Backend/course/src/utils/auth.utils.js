@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import {ACCESS_TOKEN_SECRET, REFRESH_TOKEN_SECRET, RESET_PASSWORD_SECRET} from "../constants/environmet.js";
 
 export const hashPassword= async (password)=>{
