@@ -47,8 +47,8 @@ export const updateUser = async (req, res) => {
         if (!user) {
             throw new CustomError('User not found', 404);
         }
-        await User.findByIdAndUpdate(id, req.body, {new: true});
-        res.status(200).json(user);
+        const updatedUser = await User.findByIdAndUpdate(id, req.body, {new: true});
+        res.status(200).json(updatedUser);
     } catch (error) {
         res.status(500).json({message: error.message});
     }

@@ -4,6 +4,7 @@ import {CustomError, globalErrorHandler} from "../middlewares/errorHandler.middl
 import authRoutes from "./auth.routes.js";
 import authMiddleware from "../middlewares/auth.middleware.js";
 import userRoutes from "./user.routes.js";
+import categoryRoutes from "./category.routes.js";
 
 const initializeRoutes = (app) => {
     /**
@@ -26,6 +27,7 @@ const initializeRoutes = (app) => {
     // routes
     routes.use('/auth', authRoutes);
     routes.use('/users', authMiddleware, userRoutes);
+    routes.use('/categories', categoryRoutes);
 
     app.use(`${API_PREFIX}`, routes);
 

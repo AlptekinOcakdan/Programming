@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 export function generateCategoryTree(categories, parentId = null) {
     const categoryList = [];
     let category;
