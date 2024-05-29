@@ -116,7 +116,9 @@ export const createCategory = async (req, res) => {
 
         if (parent && !mongoose.Types.ObjectId.isValid(parent)) {
             throw new CustomError('Invalid parent category!', 400);
-
+        }
+        
+        if (parent){
             const parentCategory = await Category.findById(parent);
             if (!parentCategory) throw new CustomError('Parent category not found!', 404);
         }
@@ -163,8 +165,10 @@ export const updateCategory = async (req, res) => {
             throw new CustomError('Invalid parent category!', 400);
         }
 
-        const parentCategory = parent ? await Category.findById(parent) : null;
-        if (parent && !parentCategory) throw new CustomError('Parent category not found!', 404);
+        if (parent){
+            const parentCategory = parent ? await Category.findById(parent) : null;
+            if (parent && !parentCategory) throw new CustomError('Parent category not found!', 404);
+        }
 
         const updateData = {
             title,

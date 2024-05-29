@@ -1,8 +1,14 @@
 import {model, Schema} from "mongoose";
+import {STATUS} from "../constants/types.js";
 
 const productSchema = new Schema({
     title: {
         type: String,
+        required: true
+    },
+    slug:{
+        type: String,
+        unique:true,
         required: true
     },
     price: {
@@ -16,12 +22,14 @@ const productSchema = new Schema({
     images: [
         {
             type: String,
-            required: true
+            default:null,
+            required: false
         }
     ],
     discount: {
         type: Number,
-        required: true
+        default:0,
+        required: false
     },
     stock: {
         type: Number,
@@ -36,17 +44,34 @@ const productSchema = new Schema({
     ],
     status: {
         type: String,
-        required: true
+        enum: STATUS,
+        default: STATUS.DRAFT,
+        required: false
     },
     rating: {
         type: Number,
+        default: 0,
+        required: false
+    },
+    reviews: [
+        {
+            type: reviewSchema,
+            required: false
+        }
+    ]
+}, {timestamps: true});
+
+const reviewSchema = new Schema({
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
-    reviews: {
-        type: Number,
+    body:{
+        type: String,
         required: true
     }
-}, {timestamps: true});
+}, {_id: false ,timestamps: true});
 
 const Product = model('Product', productSchema);
 

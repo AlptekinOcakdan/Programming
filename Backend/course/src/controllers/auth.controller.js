@@ -58,7 +58,7 @@ export const register = async (req, res) => {
             }
         );
     } catch (error) {
-        throw new Error(error.message);
+        res.status(500).json(error.message);
     }
 }
 
@@ -98,7 +98,7 @@ export const login = async (req, res) => {
             }
         );
     } catch (error) {
-        throw new Error(error.message);
+        res.status(500).json(error.message);
     }
 }
 
