@@ -59,12 +59,12 @@ export const createProduct = async (req, res) => {
     const {title, price, description, images, discount, stock, category, status} = req.body;
     
     const params = [title, price, description, stock, category];
-    // const missingParams = requiredParams(params);
-    if (!title){
-        return res.status(400).json({message: 'Title is required'});
+    const missingParams = requiredParams(params);
+    if (missingParams && missingParams.length > 0){
+        return res.status(400).json({message: `Missing required fields: ${missingParams}`});
     }
     
-    if(category && !mongoose.Types.ObjectId.isValid(category)){
+    if(!mongoose.Types.ObjectId.isValid(category)){
         return res.status(400).json({message: 'Invalid category id'});        
     }
     
@@ -89,7 +89,7 @@ export const createProduct = async (req, res) => {
         
         await product.save();
         
-        res.status(201).json({
+        return res.status(201).json({
             message: 'Product created successfully',
             product
         });

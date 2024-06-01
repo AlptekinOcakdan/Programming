@@ -1,12 +1,9 @@
 export const requiredParams = (params) => {
     const missingParams = [];
-    params.forEach(param => {
-        if (!param && !(param.length > 0)) {
-            missingParams.push(param);
+    for (const key in params) {
+        if (params[key] === undefined || params[key] === null || params[key] === '') {
+            missingParams.push(key);
         }
-    });
-    if (missingParams.length > 0) {
-        return missingParams;
     }
-    return false;
-}
+    return missingParams.length > 0 ? missingParams.join(', ') : false;
+};
