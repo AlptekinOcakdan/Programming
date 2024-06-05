@@ -5,6 +5,7 @@ import authRoutes from "./auth.routes.js";
 import authMiddleware from "../middlewares/auth.middleware.js";
 import userRoutes from "./user.routes.js";
 import categoryRoutes from "./category.routes.js";
+import productRoutes from "./product.routes.js";
 
 const initializeRoutes = (app) => {
     /**
@@ -28,6 +29,7 @@ const initializeRoutes = (app) => {
     routes.use('/auth', authRoutes);
     routes.use('/users', authMiddleware, userRoutes);
     routes.use('/categories', categoryRoutes);
+    routes.use('/products', productRoutes);
 
     app.use(`${API_PREFIX}`, routes);
 
