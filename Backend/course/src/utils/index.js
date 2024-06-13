@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import slugify from "slugify";
+import {v4 as uuid} from "uuid";
 
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -15,3 +17,12 @@ export const requiredParams = (params) => {
 export const isObjectId = (identifier) => {
     return ObjectId.isValid(identifier) && new ObjectId(identifier).toString() === identifier;
 }
+
+export const handleServerError = (res, error) => {
+    res.status(500).json({message: error.message});
+}
+
+export const createSlug = (title) => {
+    return slugify(title, {lower: true}) + `-${uuid().slice(0, 4)}`;
+}
+

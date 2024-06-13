@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import Category from "../models/Category.model.js";
+import Product from "../models/Product.model.js";
+import {isObjectId} from "./index.js";
 
 export const parseQueryParams = (query) => {
     const page = parseInt(query.page) || 1;
@@ -26,3 +28,8 @@ export const fetchAllSubCategories = async (categoryId) => {
 
     return categories;
 }
+
+export const fetchProductByIdentifier = async (identifier) =>{
+    const isSlug = isObjectId(identifier);
+    return isSlug ? await Product.findById(identifier) : await Product.findOne({slug: identifier});
+};

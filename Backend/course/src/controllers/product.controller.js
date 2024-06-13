@@ -1,10 +1,8 @@
-import {fetchAllSubCategories, parseQueryParams} from "../utils/product.utils.js";
+import {fetchAllSubCategories, fetchProductByIdentifier, parseQueryParams} from "../utils/product.utils.js";
 import Product from "../models/Product.model.js";
 import mongoose from "mongoose";
 import Category from "../models/Category.model.js";
-import slugify from "slugify";
-import {v4 as uuid} from "uuid";
-import {isObjectId, requiredParams} from "../utils/index.js";
+import {createSlug, handleServerError, requiredParams} from "../utils/index.js";
 import {CustomError} from "../middlewares/errorHandler.middleware.js";
 
 export const getAllProducts = async (req, res) => {
@@ -55,30 +53,28 @@ export const getAllProducts = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
 
 export const getProductByIdentifier = async (req, res) => {
     const identifier = req.params.identifier.replace(/\s+/g, '');
     try {
-        const isSlug = isObjectId(identifier);
-        const product = isSlug ? await Product.findById(identifier).populate("category") : await Product.findOne({slug: identifier}).populate("category");
+        const product = await fetchProductByIdentifier(identifier);
         if (!product) {
             throw new CustomError('Product not found', 404);
         }
 
         res.status(200).json({product});
     } catch (error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
 
 export const getRelatedProducts = async (req, res) => {
     const identifier = req.params.identifier.replace(/\s+/g, '');
     try {
-        const isSlug = isObjectId(identifier);
-        const product = isSlug ? await Product.findById(identifier) : await Product.findOne({slug: identifier});
+        const product = await fetchProductByIdentifier(identifier);
         if (!product) {
             throw new CustomError('Product not found', 404);
         }
@@ -95,7 +91,7 @@ export const getRelatedProducts = async (req, res) => {
         
         res.status(200).json({relatedProducts});
     } catch (error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
 
@@ -118,7 +114,7 @@ export const createProduct = async (req, res) => {
     }
 
     try {
-        const slug = slugify(title, {lower: true}) + `-${uuid().slice(0, 4)}`;
+        const slug = createSlug(title);
         const product = new Product({
             title,
             slug,
@@ -138,7 +134,7 @@ export const createProduct = async (req, res) => {
             product
         });
     } catch (error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
 
@@ -157,7 +153,7 @@ export const updateProduct = async (req, res) =>{
             throw new CustomError('Product not found', 404);
         }
 
-        product.slug = slugify(req.body.title, {lower: true}) + `-${uuid().slice(0, 4)}`;
+        product.slug = createSlug(req.body.title);
         
         updates.forEach(update => product[update] = req.body[update]);
         
@@ -167,7 +163,7 @@ export const updateProduct = async (req, res) =>{
         
         res.status(200).json({message: 'Product updated successfully', updatedProduct});
     }catch(error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
 
@@ -182,6 +178,6 @@ export const deleteProduct = async (req, res) => {
         await Product.findByIdAndDelete(productId);
         res.status(204).send();
     } catch (error) {
-        res.status(500).json({message: error.message});
+        handleServerError(res, error);
     }
 }
